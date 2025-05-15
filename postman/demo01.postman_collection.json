@@ -83,7 +83,7 @@
 					"listen": "test",
 					"script": {
 						"exec": [
-							"pm.test(\"Status code is 200\", function () {",
+							"pm.test(\"Get Auth :: Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
 							"});",
 							"",
@@ -194,7 +194,7 @@
 							"    \"required\": [\"id\", \"firstName\", \"lastName\", \"maidenName\", \"age\", \"gender\", \"email\", \"phone\", \"username\", \"password\", \"birthDate\", \"image\", \"bloodGroup\", \"height\", \"weight\", \"eyeColor\", \"hair\", \"ip\", \"address\", \"macAddress\", \"university\", \"bank\", \"company\", \"ein\", \"ssn\", \"userAgent\", \"crypto\", \"role\"]",
 							"};",
 							"",
-							"pm.test('Response matches schema', function () {",
+							"pm.test('Get Auth :: Response matches schema', function () {",
 							"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
 							"});",
 							"",
