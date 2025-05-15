@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('Buy Espresso 2 cups with success', async ({ page }) => {
   await page.goto('https://seleniumbase.io/coffee/');
-  await page.locator('[data-test="Espresso2"]').click();
+  await page.locator('[data-test="Espresso"]').click();
   await page.locator('[data-test="Espresso"]').click();
   await page.getByRole('link', { name: 'Cart page' }).click();
   await expect(page.locator('[data-test="checkout"]')).toContainText('Total: $20.00');
