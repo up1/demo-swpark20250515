@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "9d7ca2f3-f7f0-4324-a45b-3c37186140ed",
+		"_postman_id": "a4f928ad-e7b6-465d-9c35-52a818d93111",
 		"name": "demo01",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "1453931",
-		"_collection_link": "https://red-firefly-245852.postman.co/workspace/SWPARK-full-testing~2784d8fc-b9d0-4279-a21b-0558df6bbe67/collection/1453931-9d7ca2f3-f7f0-4324-a45b-3c37186140ed?action=share&source=collection_link&creator=1453931"
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/SWPARK-full-testing~2784d8fc-b9d0-4279-a21b-0558df6bbe67/collection/1453931-a4f928ad-e7b6-465d-9c35-52a818d93111?action=share&source=collection_link&creator=1453931"
 	},
 	"item": [
 		{
@@ -43,6 +43,10 @@
 							"",
 							"pm.test('Login success :: Access Token is in JWT format', function() {",
 							"    pm.expect(response.accessToken).to.match(/^eyJ[a-zA-Z0-9_-]*\\.[a-zA-Z0-9_-]*\\.[a-zA-Z0-9_-]*$/);",
+							"",
+							"    // set to variable",
+							"",
+							"    pm.collectionVariables.set(\"MY_TOKEN\", response.accessToken);",
 							"});",
 							"",
 							"pm.test('Login success :: Refresh Token is in JWT format', function() {",
@@ -71,6 +75,27 @@
 				"url": "https://dummyjson.com/auth/login"
 			},
 			"response": []
+		},
+		{
+			"name": "Get auth",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "{{MY_TOKEN}}"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "https://dummyjson.com/auth/me"
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "MY_TOKEN",
+			"value": ""
 		}
 	]
 }
