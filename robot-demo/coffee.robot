@@ -14,6 +14,10 @@ Success :: สั่งซื้อ esspresso จำนวน 2 แก้ว
     ลุกค้าได้รับข้อความยืนยันการสั่งซื้อเรียบร้อย
 
 *** Keywords ***
+เข้าไปดูรายละเอียดการสั่งซื้อในหน้า cart มีราคา 20.00 บาท
+    Click Element   xpath=//*[@id="app"]/ul/li[2]
+    Wait Until Element contains    xpath://*[@data-test="checkout"]   Total: $20.00
+
 ทำการสั่งซื้อ esspresso จำนวน 2 แก้ว
     Click Element    xpath://*[@data-test="Espresso"]
     Click Element    xpath://*[@data-test="Espresso"]
