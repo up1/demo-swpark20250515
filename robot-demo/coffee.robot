@@ -18,3 +18,5 @@ Success :: สั่งซื้อ esspresso จำนวน 2 แก้ว
     Open Browser    ${URL}    chrome
     ...    options=add_experimental_option("detach", True)
     Maximize Browser Window
+    # 9 menus
+    Page Should Contain Element	  xpath://*[@id="app"]/div[2]/ul/li	  limit=9
