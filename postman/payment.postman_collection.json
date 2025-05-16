@@ -1,0 +1,100 @@
+{
+	"info": {
+		"_postman_id": "339b3cb5-e5a0-45ac-8f46-704aad92e33d",
+		"name": "payment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1453931",
+		"_collection_link": "https://red-firefly-245852.postman.co/workspace/SWPARK-full-testing~2784d8fc-b9d0-4279-a21b-0558df6bbe67/collection/1453931-339b3cb5-e5a0-45ac-8f46-704aad92e33d?action=share&source=collection_link&creator=1453931"
+	},
+	"item": [
+		{
+			"name": "pay by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{xxxx}/payment/:id",
+					"host": [
+						"{{xxxx}"
+					],
+					"path": [
+						"payment",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Success",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{xxxx}/payment/1"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pay success\"\n}"
+				},
+				{
+					"name": "Fail 500",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{xxxx}/payment/2"
+					},
+					"status": "Internal Server Error",
+					"code": 500,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pay fail\"\n}"
+				},
+				{
+					"name": "Fail 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "{{xxxx}/payment/3"
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Pay not found\"\n}"
+				}
+			]
+		}
+	]
+}
