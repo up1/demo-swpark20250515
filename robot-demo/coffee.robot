@@ -14,6 +14,11 @@ Success :: สั่งซื้อ esspresso จำนวน 2 แก้ว
     ลุกค้าได้รับข้อความยืนยันการสั่งซื้อเรียบร้อย
 
 *** Keywords ***
+ทำการสั่งซื้อ esspresso จำนวน 2 แก้ว
+    Click Element    xpath://*[@data-test="Espresso"]
+    Click Element    xpath://*[@data-test="Espresso"]
+    Wait Until Element contains    xpath=//*[@id="app"]/ul/li[2]   cart (2)
+
 ลูกค้าเข้ามายังหน้า menu กาแฟ
     Open Browser    ${URL}    chrome
     ...    options=add_experimental_option("detach", True)
