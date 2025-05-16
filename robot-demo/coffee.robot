@@ -31,7 +31,7 @@ Success :: สั่งซื้อ esspresso จำนวน 2 แก้ว
     Wait Until Element contains    xpath=//*[@id="app"]/ul/li[2]   cart (2)
 
 ลูกค้าเข้ามายังหน้า menu กาแฟ
-    Open Browser    ${URL}    chrome
+    Open Browser    ${URL}    headlesschrome
     ...    options=add_experimental_option("detach", True)
     Maximize Browser Window
     # 9 menus
